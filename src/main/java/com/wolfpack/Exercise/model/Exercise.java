@@ -3,13 +3,16 @@ package com.wolfpack.Exercise.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.util.List;
 
 @Entity
+@Table(name = "exercises")
 public class Exercise {
     //PARAMETERS
     @Id
+    @Column
     private String name;
     @Column
     private List<String> muscles;
