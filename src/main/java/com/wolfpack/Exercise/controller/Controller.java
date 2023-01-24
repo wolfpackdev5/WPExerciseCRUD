@@ -5,10 +5,7 @@ import com.wolfpack.Exercise.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +27,16 @@ public class Controller {
     public ResponseEntity<List<Exercise>> allExercises() {
         List exercises = this.exerciseService.getAllExercises();
         return new ResponseEntity<>(exercises, HttpStatus.OK);
+    }
+    @GetMapping("exercises/{muscles}")
+    public ResponseEntity<List<Exercise>> exercisesByMuscle(@PathVariable String muscles) {
+        
+        List<Exercise> exercises = this.exerciseService.getExerciseByMuscle(muscles);
+        return new ResponseEntity<>(exercises, HttpStatus.OK);
+    }
+    @PostMapping("newExercise")
+    public ResponseEntity<Exercise> newExercise(@RequestBody Exercise exercise) {
+        this.exerciseService.newExercise(exercise);
+        return new ResponseEntity<>(exercise, HttpStatus.OK);
     }
 }

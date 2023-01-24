@@ -15,18 +15,18 @@ public class Exercise {
     @Column
     private String name;
     @Column
-    private List<String> muscles;
+    private String muscles;
     @Column
     private String tutorial;
 
     //CONSTRUCTORS
     public Exercise() {}
 
-    public Exercise(String name, List<String> muscles, String tutorial) {
-        this.name = name;
-        this.muscles = muscles;
-        this.tutorial = tutorial;
-    }
+   public Exercise(String name, String muscles, String tutorial) {
+       this.name = name;
+       this.muscles = muscles;
+       this.tutorial = tutorial;
+   }
     //GETTERS AND SETTERS
     public String getName() {
         return name;
@@ -36,11 +36,11 @@ public class Exercise {
         this.name = name;
     }
 
-    public List<String> getMuscles() {
+    public String getMuscles() {
         return muscles;
     }
 
-    public void setMuscles(List<String> muscles) {
+    public void setMuscles(String muscles) {
         this.muscles = muscles;
     }
 

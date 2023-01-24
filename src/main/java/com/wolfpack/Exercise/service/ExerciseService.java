@@ -22,4 +22,12 @@ public class ExerciseService {
     public List<Exercise> getAllExercises() {
         return this.exerciseRepo.findAll();
     }
+    public List<Exercise> getExerciseByMuscle(String muscles) {
+        System.out.println(muscles);
+        return this.exerciseRepo.findAllByMuscles(muscles);
+    }
+    public Exercise newExercise(Exercise exercise) {
+        this.exerciseRepo.save(exercise);
+        return exercise;
+    }
 }
