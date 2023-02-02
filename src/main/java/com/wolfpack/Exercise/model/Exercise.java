@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "exercises")
+@Table(name = "exercise")
 public class Exercise {
     //PARAMETERS
     @Id
